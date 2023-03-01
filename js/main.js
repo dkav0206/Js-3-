@@ -45,8 +45,16 @@ function countPositive(){
 
 //Bài 3
 function findSmallest(){
-    let smallestNum = Math.min(...globalArray);
-    getELE("resultB3").innerHTML = "🤑" + smallestNum;
+    let smallestNum = [];
+    for(let i = 0; i <= globalArray.length; i++){ 
+        smallestNum.push(globalArray[i]);
+    }
+    smallestNum.sort();
+    if (typeof(smallestNum[0] === "undefined")){
+        getELE("resultB3").innerHTML = "🤑 Mảng chưa nhập giá trị" ;
+    }else{
+        getELE("resultB3").innerHTML = "🤑" + smallestNum[0];
+    }
 }
 
 //Bài 4
@@ -59,7 +67,12 @@ function findSmallestPlus(){
         }
     }
     smallestNumArray.sort();
-    getELE("resultB4").innerHTML = "🤑" + smallestNumArray[0];
+
+    if (typeof(smallestNumArray[0] === "undefined")){
+        getELE("resultB4").innerHTML = "🤑 Không có số dương" ;
+    }else{
+        getELE("resultB4").innerHTML = "🤑" + smallestNumArray[0];
+    }
 }
 
 //Bài 5
